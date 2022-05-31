@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+
+    <div class="py-5 text-center">
+        <h2>회원 상세</h2>
+    </div>
+
+    <div>
+        <label th:text="'회원번호'"></label>
+        <input th:value="${user.id}" readonly>
+    </div>
+    <div>
+        <label th:text="'계정'"></label>
+        <input th:value="${user.account}" readonly>
+    </div>
+    <div>
+        <label th:text="'이메일'">이메일</label>
+        <input th:value="${user.email}" readonly>
+    </div>
+    <div>
+        <label th:text="'회원상태'">회원상태</label>
+        <input th:value="${user.astatus}" readonly>
+    </div>
+    <div>
+        <label th:text="'전화번호'">전화번호</label>
+        <input th:value="${user.phone}" readonly>
+    </div>
+    <div>
+        <label th:text="'생성일자'">생성일자</label>
+        <input th:value="${user.createdAt}" readonly>
+    </div>
+    <div>
+        <label th:text="'생성자'">생성자</label>
+        <input th:value="${user.createdBy}" readonly>
+    </div>
+    <div>
+        <label th:text="'수정일자'">수정일자</label>
+        <input th:value="${user.updatedAt}" readonly>
+    </div>
+    <div>
+        <label th:text="'수정자'">수정자</label>
+        <input th:value="${user.updatedBy}" readonly>
+    </div>
+    <hr class="my-4">
+
+    <div class="row">
+        <button th:onclick="|location.href='@{/users/{userId}/edit(userId=${user.id})}'|"
+                type="button" th:text="회원수정">회원수정</button>
+        <button th:onclick="|location.href='@{/users}'|"
+                type="button" th:text="목록으로">목록으로</button>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
